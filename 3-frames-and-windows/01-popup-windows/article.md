@@ -196,43 +196,43 @@ newWindow.onload = function() {
 Методы для передвижения и изменения размеров окна:
 
 `win.moveBy(x,y)`
-: Move the window relative to current position `x` pixels to the right and `y` pixels down. Negative values are allowed (to move left/up).
+: Переместить окно относительно текущеё позиции. На `x` пикселей вправо и `y` пикселей вниз. Отрицательные значения `x,y` позволяют сдвигать (влево / вверх).
 
 `win.moveTo(x,y)`
-: Move the window to coordinates `(x,y)` on the screen.
+: Переместить окно на координаты `(x,y)` экрана пользователя.
 
 `win.resizeBy(width,height)`
-: Resize the window by given `width/height` relative to the current size. Negative values are allowed.
+: Изменить размеры окна на заданные `width/height` относительно текущих размеров.Доступно использование отрицательных значений.
 
 `win.resizeTo(width,height)`
-: Resize the window to the given size.
+: Изменить размеры окна, на переданные значения `(width , height)`.
 
-There's also `window.onresize` event.
+Также существует событие изменения размера `window.onresize`.
 
-```warn header="Only popups"
-To prevent abuse, the browser usually blocks these methods. They only work reliably on popups that we opened, that have no additional tabs.
+```warn header="Только для попапов"
+В интересах безопасности, браузеры обычно блокируют эти методы. Они работают только с откртыми нами окнами, которые не имеют дополнительных вкладок
 ```
 
-```warn header="No minification/maximization"
-JavaScript has no way to minify or maximize a window. These OS-level functions are hidden from Frontend-developers.
+```warn header="Нельзя свернуть/развернуть окно"
+У JavaScript нет возможности сворачивать / разворачивать окна. Это функционал уровня операционной системы не доступный для Front-end разработчиковю
 
-Move/resize methods do not work for maximized/minimized windows.
+Методы перемещения и изменения размеров не работают со свёрнутыми окнами.
 ```
 
-## Scrolling a window
+## Прокрутка (scrolling) окна.
 
-We already talked about scrolling a window in the chapter <info:size-and-scroll-window>.
+Мы уже говорили и прокрутке окна в главе <info:size-and-scroll-window>.
 
 `win.scrollBy(x,y)`
-: Scroll the window `x` pixels right and `y` down relative the current scroll. Negative values are allowed.
+: Прокрутка окна на `x` пикселей вправо и на `y` пикселей вниз относительно текущей прокрутки. Отрицательные значения также доступны.
 
 `win.scrollTo(x,y)`
-: Scroll the window to the given coordinates `(x,y)`.
+: Прокрутка окна на координаты `(x,y)`.
 
 `elem.scrollIntoView(top = true)`
-: Scroll the window to make `elem` show up at the top (the default) or at the bottom for `elem.scrollIntoView(false)`.
+: Прокрутка окна показывающая элемент `elem` на верху страницы (по умолчанию) или внизу, вызвав `elem.scrollIntoView(false)`.
 
-There's also `window.onscroll` event.
+Также доступно событие прокрутки `window.onscroll`.
 
 ## Установка и потеря фокуса
 
